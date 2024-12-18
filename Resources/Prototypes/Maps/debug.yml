@@ -48,3 +48,9 @@
             - ChiefEngineer
           availableJobs:
             ChiefEngineer: [ -1, -1 ]
+         # Goobstation blob-config-start DEBUG
+        - type: StationBlobConfig
+          stageBegin: 20
+          stageCritical: 50
+          stageTheEnd: 100
+        # Goobstation blob-config-end
