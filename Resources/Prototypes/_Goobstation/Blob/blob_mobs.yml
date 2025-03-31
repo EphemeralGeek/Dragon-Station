@@ -115,6 +115,7 @@
       damageModifierSet: BlobMob
     - type: Tag
       tags:
+        - Blobbernaut
         - BlobMob
     - type: GhostRole
       name: ghost-role-information-blobbernaut-name

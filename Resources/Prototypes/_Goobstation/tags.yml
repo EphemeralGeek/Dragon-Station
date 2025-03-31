@@ -2,6 +2,9 @@
   id: CartridgeLightRifleSubsonic
 
 - type: Tag
+  id: Blobbernaut
+
+- type: Tag
   id: CartridgeHighCaliber
 
 - type: Tag
