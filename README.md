@@ -1,6 +1,6 @@
 # Einstein Engines
 
-<p align="center"><img src="https://raw.githubusercontent.com/Simple-Station/Einstein-Engines/master/Resources/Textures/Logo/source/DS_Splash.svg" width="880" /></p>
+<p align="center"><img src="https://github.com/EphemeralGeek/Dragon-Station/blob/main/Resources/Textures/Logo/source/DS_Splash.svg" width="880" /></p>
 
 ---
 
