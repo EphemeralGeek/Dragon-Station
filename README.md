@@ -1,4 +1,4 @@
-# Einstein Engines
+# Dragon Station
 
 <p align="center"><img src="https://github.com/EphemeralGeek/Dragon-Station/blob/main/Resources/Textures/Logo/source/DS_Splash.svg" width="880" /></p>
 
