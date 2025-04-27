@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Sprite made by Gtheglorious based on the sprite made by emisse for ss14, harpy variant by VMSolidus, vox state made by Flareguy for SS14. lamia & segment by @noctyrnal",
+  "copyright": "Sprite made by Gtheglorious based on the sprite made by emisse for ss14, harpy variant by VMSolidus, vox state made by Flareguy for SS14. lamia & segment by @noctyrnal, equipped-OUTERCLOTHING-resomi made by svarshiksatanist (Discord)",
   "size": {
     "x": 32,
     "y": 32
@@ -36,6 +36,10 @@
         },
         {
             "name": "segment"
+        },
+        {
+            "name": "equipped-OUTERCLOTHING-resomi",
+            "directions": 4
         }
     ]
 }

@@ -1,0 +1,96 @@
+- type: entity
+  save: false
+  name: Urist McRaptor
+  parent: BaseMobHuman
+  id: BaseMobResomi
+  abstract: true
+  components:
+  - type: LanguageKnowledge
+    speaks:
+       - TauCetiBasic
+    understands:
+       - TauCetiBasic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 185
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: DamageVisuals
+    thresholds: [ 10, 30, 50, 70 ]
+    damageOverlayGroups:
+      Brute:
+        sprite: _Floofstation/Mobs/Effects/Resomi/brute_damage.rsi
+        color: "#C048C2"
+      Burn:
+        sprite: _Floofstation/Mobs/Effects/Resomi/burn_damage.rsi
+  - type: FireVisuals
+    sprite: _Floofstation/Mobs/Effects/onfire.rsi
+    normalState: Resomi_minor_burning
+    alternateState: Resomi_burning
+  - type: HumanoidAppearance
+    species: Resomi
+  - type: Icon
+    sprite: _Floofstation/Mobs/Species/Resomi/parts.rsi
+    state: full
+  - type: Body
+    prototype: Resomi
+    requiredLegs: 2
+  - type: Speech
+    speechVerb: Parrot
+    speechSounds: MaleAvali
+  - type: Vocal
+    sounds:
+      Male: MaleAvali
+      Unsexed: MaleAvali
+      Female: FemaleAvali
+  - type: PseudoItem
+    storedOffset: 0,17
+    shape:
+      - 0,0,1,4
+      - 0,2,3,4
+      - 4,0,5,4
+
+  - type: FootPrints # Goobstation - resomi footprints
+    leftBarePrint: "footprint-left-bare-lizard"
+    rightBarePrint: "footprint-right-bare-lizard"
+  - type: Bloodstream # Goobstation - lore stuff
+    bloodReagent: AmmoniaBlood
+  - type: MeleeWeapon # Goobstation - aliem raptors probably use their claws
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+  - type: Damageable # Goobstation - resomi damage modifiers
+    damageModifierSet: Resomi
+  - type: Temperature
+    coldDamageThreshold: 195.4 # Goobstation - freezing point of ammonia is -77.75°C
+    heatDamageThreshold: 310.15 # Adjusted for Dragon Station, they can die by touching lights enough
+    coldDamage:
+      types:
+        Cold : 0.05 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat : 3 #per second, scales with temperature & other constants
+  - type: MovementSpeedModifier
+    weightlessAcceleration: 2.5 # Goobstation - Birb move fast in zero-g
+
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobResomiDummy
+  save: false
+  description: A dummy resomi meant to be used in character setup.
+  components:
+  - type: HumanoidAppearance
+    species: Resomi
+
