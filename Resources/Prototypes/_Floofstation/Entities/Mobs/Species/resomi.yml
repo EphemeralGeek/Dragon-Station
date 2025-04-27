@@ -74,7 +74,7 @@
     damageModifierSet: Resomi
   - type: Temperature
     coldDamageThreshold: 195.4 # Goobstation - freezing point of ammonia is -77.75°C
-    heatDamageThreshold: 310.15 # Goobstation - space chickens can't tolerate reasonable temperatures, but requiring them to stay icy would be cringe, so instead make their heat damage threshold dangerously close to standard atmos, at 47°C
+    heatDamageThreshold: 310.15 # Adjusted for Dragon Station, they can die by touching lights enough
     coldDamage:
       types:
         Cold : 0.05 #per second, scales with temperature & other constants
