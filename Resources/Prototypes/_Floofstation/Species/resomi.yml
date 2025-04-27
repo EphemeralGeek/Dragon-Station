@@ -8,6 +8,12 @@
   markingLimits: MobResomiMarkingLimits
   dollPrototype: MobResomiDummy
   skinColoration: Hues
+  minHeight: 0.65
+  defaultHeight: 0.8
+  maxHeight: 1.1
+  minWidth: 0.6
+  defaultWidth: 0.8
+  maxWidth: 1.15
   maleFirstNames: names_resomi_male
   femaleFirstNames: names_resomi_female
   naming: First
@@ -54,10 +60,16 @@
     Chest:
       points: 1
       required: false
-    Legs:
+    LeftLeg:
       points: 2
       required: false
-    Arms:
+    RightLeg:
+      points: 2
+      required: false
+    LeftArm:
+      points: 2
+      required: false
+    RightArm:
       points: 2
       required: false
 
