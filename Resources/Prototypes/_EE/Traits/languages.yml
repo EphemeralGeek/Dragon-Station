@@ -110,7 +110,6 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Harpy
-        - Chitinid
         - IPC
   functions:
     - !type:TraitModifyLanguages

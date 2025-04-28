@@ -1,4 +1,3 @@
-using Content.Server.Abilities.Chitinid;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Chat.Managers;
@@ -126,24 +125,6 @@ public sealed class FillableOneTimeInjectorSystem : SharedFillableOneTimeInjecto
     {
         if (injector.Comp.ToggleState == FillableOneTimeInjectorToggleMode.Spent)
             return;
-
-        if (TryComp<BlockInjectionComponent>(target, out var blockComponent)) // DeltaV
-        {
-            var msg = Loc.GetString($"injector-component-deny-{blockComponent.BlockReason}");
-            Popup.PopupEntity(msg, target, user);
-
-            if (!_playerManager.TryGetSessionByEntity(target, out var session))
-                return;
-
-            _chat.ChatMessageToOne(
-                BlockInjectionDenyChannel,
-                msg,
-                msg,
-                EntityUid.Invalid,
-                false,
-                session.Channel);
-            return;
-        }
 
         bool isDrawing = injector.Comp.ToggleState == FillableOneTimeInjectorToggleMode.Draw;
 
@@ -289,8 +270,6 @@ public sealed class FillableOneTimeInjectorSystem : SharedFillableOneTimeInjecto
     private void TryInject(Entity<FillableOneTimeInjectorComponent> injector, EntityUid targetEntity,
         Entity<SolutionComponent> targetSolution, EntityUid user, bool asRefill)
     {
-        if (HasComp<BlockInjectionComponent>(targetEntity))  // DeltaV
-            return;
 
         if (injector.Comp.ToggleState == FillableOneTimeInjectorToggleMode.Spent)
             return;
