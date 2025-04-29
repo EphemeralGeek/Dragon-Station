@@ -78,7 +78,7 @@
     pointsPerPulsed: 5
   - type: Sprite
     sprite: _Goobstation/Blob/Mobs/blob.rsi
-    drawdepth: BlobTiles
+    drawdepth: BlobTile
     layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: blob_core
@@ -128,7 +128,7 @@
             acts: [ "Destruction" ]
   - type: Sprite
     sprite: _Goobstation/Blob/Mobs/blob.rsi
-    drawdepth: BlobTiles
+    drawdepth: BlobTile
     layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: blob
@@ -193,7 +193,7 @@
     - type: BlobFactory
     - type: Sprite
       sprite: _Goobstation/Blob/Mobs/blob.rsi
-      drawdepth: BlobTiles
+      drawdepth: BlobTile
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
           state: blob_special
@@ -231,7 +231,7 @@
     - type: BlobResource
     - type: Sprite
       sprite: _Goobstation/Blob/Mobs/blob.rsi
-      drawdepth: BlobTiles
+      drawdepth: BlobTile
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
           state: blob_special
@@ -271,7 +271,7 @@
     - type: BlobNode
     - type: Sprite
       sprite: _Goobstation/Blob/Mobs/blob.rsi
-      drawdepth: BlobTiles
+      drawdepth: BlobTile
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
           state: blob_node
@@ -300,7 +300,7 @@
               acts: [ "Destruction" ]
     - type: Sprite
       sprite: _Goobstation/Blob/Mobs/blob.rsi
-      drawdepth: BlobTiles
+      drawdepth: BlobTile
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
           state: blob_shield
@@ -333,7 +333,7 @@
         - Energy
     - type: Sprite
       sprite: _Goobstation/Blob/Mobs/blob.rsi
-      drawdepth: BlobTiles
+      drawdepth: BlobTile
       layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: blob_shield

@@ -29,7 +29,7 @@ They can also be upgraded to reinforced versions, or turned into special blob Ti
 ## Special cages
 
   <Box>
-    <GuideEntityEmbed Entity="ResourceBlobTile" Caption="Resource Blob"/>
+  <GuideEntityEmbed Entity="ResourceBlobTile" Caption="Resource Blob"/>
 	<GuideEntityEmbed Entity="FactoryBlobTile" Caption="Factory Blob"/>
 	<GuideEntityEmbed Entity="NodeBlobTile" Caption="Node Blob"/>
   </Box>

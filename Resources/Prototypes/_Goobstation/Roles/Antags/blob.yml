@@ -6,5 +6,5 @@
   objective: roles-antag-blob-objective
   guides: [ Blob ]
   requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 18000 # 5h # Goobstation-RoleTime
+#  - !type:OverallPlaytimeRequirement
+#    time: 18000 # 5h # Goobstation-RoleTime
