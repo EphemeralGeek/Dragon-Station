@@ -49,7 +49,7 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: BlobTile
+  - type: BlobTiles
     blobTileType: Core
   - type: Store
     currencyWhitelist:
@@ -82,7 +82,7 @@
     pointsPerPulsed: 5
   - type: Sprite
     sprite: _Goobstation/Blob/Mobs/blob.rsi
-    drawdepth: BlobTile
+    drawdepth: BlobTiles
     layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: blob_core
@@ -124,7 +124,7 @@
     damage:
       types:
         Heat: 1
-  - type: BlobTile
+  - type: BlobTiles
     blobTileType: Normal
   - type: Destructible
     thresholds:
@@ -136,7 +136,7 @@
             acts: [ "Destruction" ]
   - type: Sprite
     sprite: _Goobstation/Blob/Mobs/blob.rsi
-    drawdepth: BlobTile
+    drawdepth: BlobTiles
     layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: blob
@@ -188,7 +188,7 @@
       damage:
         types:
           Heat: 1
-    - type: BlobTile
+    - type: BlobTiles
       blobTileType: Factory
     - type: Destructible
       thresholds:
@@ -201,7 +201,7 @@
     - type: BlobFactory
     - type: Sprite
       sprite: _Goobstation/Blob/Mobs/blob.rsi
-      drawdepth: BlobTile
+      drawdepth: BlobTiles
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
           state: blob_special
@@ -226,7 +226,7 @@
       damage:
         types:
           Heat: 1
-    - type: BlobTile
+    - type: BlobTiles
       blobTileType: Resource
     - type: Destructible
       thresholds:
@@ -266,7 +266,7 @@
       damage:
         types:
           Heat: 1
-    - type: BlobTile
+    - type: BlobTiles
       blobTileType: Node
     - type: Destructible
       thresholds:
@@ -279,7 +279,7 @@
     - type: BlobNode
     - type: Sprite
       sprite: _Goobstation/Blob/Mobs/blob.rsi
-      drawdepth: BlobTile
+      drawdepth: BlobTiles
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
           state: blob_node
@@ -296,7 +296,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Airtight
-    - type: BlobTile
+    - type: BlobTiles
       blobTileType: Strong
     - type: Destructible
       thresholds:
@@ -308,7 +308,7 @@
               acts: [ "Destruction" ]
     - type: Sprite
       sprite: _Goobstation/Blob/Mobs/blob.rsi
-      drawdepth: BlobTile
+      drawdepth: BlobTiles
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
           state: blob_shield
@@ -324,7 +324,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Airtight
-    - type: BlobTile
+    - type: BlobTiles
       blobTileType: Reflective
     - type: Destructible
       thresholds:
@@ -341,7 +341,7 @@
         - Energy
     - type: Sprite
       sprite: _Goobstation/Blob/Mobs/blob.rsi
-      drawdepth: BlobTile
+      drawdepth: BlobTiles
       layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: blob_shield

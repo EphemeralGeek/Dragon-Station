@@ -29,32 +29,6 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
         SubscribeLocalEvent<AnimatedEmotesComponent, AnimationFlipEmoteEvent>(OnFlip);
         SubscribeLocalEvent<AnimatedEmotesComponent, AnimationSpinEmoteEvent>(OnSpin);
         SubscribeLocalEvent<AnimatedEmotesComponent, AnimationJumpEmoteEvent>(OnJump);
-        SubscribeLocalEvent<AnimatedEmotesComponent, AnimationTweakEmoteEvent>(OnTweak);
-        SubscribeLocalEvent<AnimatedEmotesComponent, AnimationFlexEmoteEvent>(OnFlex);
-        SubscribeNetworkEvent<BibleFartSmiteEvent>(OnBibleSmite);
-    }
-
-    public void OnBibleSmite(BibleFartSmiteEvent args)
-    {
-        EntityUid uid = GetEntity(args.Bible);
-        if (!_timing.IsFirstTimePredicted || uid == EntityUid.Invalid)
-            return;
-
-        var rays = _rays.DoRays(_transform.GetMapCoordinates(uid),
-            Color.LightGoldenrodYellow,
-            Color.AntiqueWhite,
-            10,
-            15,
-            minMaxRadius: new Vector2(3f, 6f),
-            minMaxEnergy: new Vector2(2f, 4f),
-            proto: "EffectRayCharge",
-            server: false);
-
-        if (rays == null)
-            return;
-
-        var track = EnsureComp<TrackUserComponent>(rays.Value);
-        track.User = uid;
     }
 
     public void PlayEmote(EntityUid uid, Animation anim, string animationKey = "emoteAnimKeyId")
@@ -144,53 +118,6 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
                         new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0f),
                         new AnimationTrackProperty.KeyFrame(new Vector2(0, .35f), 0.125f),
                         new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0.125f),
-                    }
-                }
-            }
-        };
-        PlayEmote(ent, a);
-    }
-
-    private void OnFlex(Entity<AnimatedEmotesComponent> ent, ref AnimationFlexEmoteEvent args)
-    {
-        NetEntity netEntity = EntityManager.GetNetEntity(ent.Owner);
-
-        if (!EntityManager.TryGetEntityData(netEntity, out _, out var metaData))
-        {
-            var sawmill = Logger.GetSawmill("flex-emotes");
-            sawmill.Warning($"EntityPrototype is null for entity {netEntity}");
-            return;
-        }
-
-        if (metaData.EntityPrototype == null)
-        {
-            var sawmill = Logger.GetSawmill("flex-emotes");
-            sawmill.Warning($"EntityPrototype is null for entity {netEntity} (Type: {metaData.EntityName})");
-            return;
-        }
-
-        var a = new Animation
-        {
-            Length = TimeSpan.FromMilliseconds(FlexAnimationDurationMs + 100), // give it time to reset
-            AnimationTracks =
-            {
-                new AnimationTrackSpriteFlick
-                {
-                    LayerKey = DamageStateVisualLayers.Base,
-                    KeyFrames =
-                    {
-                        new AnimationTrackSpriteFlick.KeyFrame(new RSI.StateId($"{metaData.EntityPrototype.SetName?.ToLower()}_flex"), 0f),
-                        new AnimationTrackSpriteFlick.KeyFrame(new RSI.StateId($"{metaData.EntityPrototype.SetName?.ToLower()}"), FlexAnimationDurationMs / 1000f)
-                    }
-                },
-                // don't display the glow while flexing
-                new AnimationTrackSpriteFlick
-                {
-                    LayerKey = DamageStateVisualLayers.BaseUnshaded,
-                    KeyFrames =
-                    {
-                        new AnimationTrackSpriteFlick.KeyFrame(new RSI.StateId($"{metaData.EntityPrototype.SetName?.ToLower()}_flex_damage"), 0f),
-                        new AnimationTrackSpriteFlick.KeyFrame(new RSI.StateId($"nautdamage"), FlexAnimationDurationMs / 1000f)
                     }
                 }
             }
