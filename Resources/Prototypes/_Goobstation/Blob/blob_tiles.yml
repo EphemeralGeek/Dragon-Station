@@ -49,7 +49,7 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: BlobTiles
+  - type: Sprite
     blobTileType: Core
   - type: Store
     currencyWhitelist:
@@ -124,7 +124,7 @@
     damage:
       types:
         Heat: 1
-  - type: BlobTiles
+  - type: BlobTile
     blobTileType: Normal
   - type: Destructible
     thresholds:
@@ -188,7 +188,7 @@
       damage:
         types:
           Heat: 1
-    - type: BlobTiles
+    - type: BlobTile
       blobTileType: Factory
     - type: Destructible
       thresholds:
@@ -226,7 +226,7 @@
       damage:
         types:
           Heat: 1
-    - type: BlobTiles
+    - type: BlobTile
       blobTileType: Resource
     - type: Destructible
       thresholds:
@@ -266,7 +266,7 @@
       damage:
         types:
           Heat: 1
-    - type: BlobTiles
+    - type: BlobTile
       blobTileType: Node
     - type: Destructible
       thresholds:
@@ -296,7 +296,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Airtight
-    - type: BlobTiles
+    - type: BlobTile
       blobTileType: Strong
     - type: Destructible
       thresholds:
@@ -324,7 +324,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Airtight
-    - type: BlobTiles
+    - type: BlobTile
       blobTileType: Reflective
     - type: Destructible
       thresholds:
